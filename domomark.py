@@ -9,4 +9,4 @@ template = env.get_template('testone.html')
 @app.route('/')
 def hello():
     #return 'Hello World!'
-    print template.render()
+    return template.render()
