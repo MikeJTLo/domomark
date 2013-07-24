@@ -1,4 +1,4 @@
-import os 
+import os, urllib2
 from flask import Flask
 from jinja2 import Environment, PackageLoader
 
@@ -9,4 +9,6 @@ template = env.get_template('index.html')
 @app.route('/')
 def hello():
     #return 'Hello World!'
-    return template.render()
+    return "This is a work in progress."
+    #return template.render()
+    #return urllib2.geturl()
