@@ -37,32 +37,59 @@
 				domomark
 			</div>
 			<div class="grid_3 push_6">
-				about | sign in | <a href='/logout'>sign out</a>
+			about | register |
+			{% if user.username == "" %}
+				<a href="#" id="logonLink">sign in</a> 
+			{% else %} 
+				<a href='/logout'>sign out</a>
+			{% endif %}
+			</div>
+        </div>
+        
+        <div class="container_12">
+			<div class="grid_3 push_6">
+				<div id="logon">
+					<form method="POST">
+					<div class="container_12">
+					<div class="grid_1"><b>Username:</b></div>
+					<div class="grid_1 prefix_1"><input name="username" type="text"></div>
+					<br />
+					</div>
+					<div class="container_12">
+					<div class="grid_1"><b>Password:</b></div>
+					<div class="grid_1 prefix_1"><input name="password" type="password"></div>
+					<br />
+					</div>
+					<div class="container_12">
+        			<div class="grid_1"><input type="submit" value="login"></div>
+					</div>
+        			</form>
+				</div>
 			</div>
         </div>
         
         <p><p><p></p></p></p>
-		<form method="POST">
-		<div class="container_12">
-			<div class="grid_1"><b>Username:</b></div>
-			<div class="grid_1 prefix_1"><input name="username" type="text"></div>
-			<br />
-		</div>
-		<div class="container_12">
-			<div class="grid_1"><b>Password:</b></div>
-			<div class="grid_1 prefix_1"><input name="password" type="password"></div>
-			<br />
-		</div>
-		<div class="container_12">
-        	<div class="grid_1"><input type="submit" value="login"></div>
-		</div>
-        </form>
-		
-        
-        <p><p><p></p></p></p>
-        
+
+
+        <div class="container_12">
+			<div class="grid_3">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pulvinar lorem nisl, vulputate varius dolor suscipit ac. Sed pretium euismod massa, ut euismod elit accumsan non. Aliquam tortor nunc, euismod sit amet lorem at, convallis vehicula enim. Integer ut tincidunt augue. Donec consectetur ipsum arcu, in eleifend velit imperdiet nec. Sed tincidunt mi vitae elit gravida, a fermentum velit vehicula. Duis a diam sed urna pretium sodales. Vivamus scelerisque ornare tincidunt. Duis malesuada in tellus sed auctor. Maecenas venenatis aliquam felis nec mattis. Nam tempor orci sit amet purus tincidunt interdum. Curabitur consectetur ante ac viverra aliquet. Pellentesque feugiat bibendum elit et scelerisque. Mauris aliquet dictum auctor. Suspendisse libero enim, faucibus sed eros sed, elementum varius tellus. Cras porttitor quam nibh, a posuere sem venenatis nec.
+			</div>
+			<div class="grid_3">
+				Fusce auctor auctor nibh, quis tincidunt ante condimentum nec. Donec laoreet metus at felis consectetur dictum. Donec sit amet rhoncus elit. Sed pellentesque leo a nibh luctus, vitae semper risus faucibus. Aenean elementum aliquam odio, nec vehicula tortor viverra eu. Ut vel sagittis quam. Cras interdum ante et sem bibendum elementum. Ut ultrices laoreet tortor, vel rutrum tellus congue ut. Nam ac mi velit. Vivamus a est quis arcu malesuada condimentum ut aliquet tortor. Maecenas adipiscing urna eget dolor elementum sollicitudin. Sed tellus purus, ultrices at sodales at, tempor id quam. Mauris blandit ipsum sed tellus volutpat consectetur. Pellentesque at nibh a arcu elementum vestibulum.
+			</div>
+			<div class="grid_3">
+				Maecenas sagittis, tellus eu volutpat volutpat, orci elit interdum sapien, sed egestas dolor diam at mauris. Fusce adipiscing nisl ullamcorper tincidunt suscipit. Duis consectetur elementum massa, et pulvinar tellus viverra eget. Praesent sit amet leo lectus. Aenean nibh ante, tincidunt quis urna id, placerat aliquet sapien. Etiam euismod nisi eget posuere sagittis. Quisque ornare leo sed diam porttitor, eget feugiat augue fermentum. Aliquam erat volutpat. Suspendisse viverra tellus in pulvinar tristique. In quam mi, lacinia sed odio at, tincidunt semper libero. Donec elementum ante dui, in ultricies sapien consectetur at. Mauris eu leo ut nisi ornare placerat vel sed massa.
+			</div>
+			<div class="grid_3">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pulvinar lorem nisl, vulputate varius dolor suscipit ac. Sed pretium euismod massa, ut euismod elit accumsan non. Aliquam tortor nunc, euismod sit amet lorem at, convallis vehicula enim. Integer ut tincidunt augue. Donec consectetur ipsum arcu, in eleifend velit imperdiet nec. Sed tincidunt mi vitae elit gravida, a fermentum velit vehicula. Duis a diam sed urna pretium sodales. Vivamus scelerisque ornare tincidunt. Duis malesuada in tellus sed auctor. Maecenas venenatis aliquam felis nec mattis. Nam tempor orci sit amet purus tincidunt interdum. Curabitur consectetur ante ac viverra aliquet. Pellentesque feugiat bibendum elit et scelerisque. Mauris aliquet dictum auctor. Suspendisse libero enim, faucibus sed eros sed, elementum varius tellus. Cras porttitor quam nibh, a posuere sem venenatis nec.
+			</div>
+        </div>
+
+
         <div class="container_12">
 			<div class="grid_12" style="font-size:12px;color:#ffffff;background-color:#000000;">
+				<br /><br />
 				&nbsp;&nbsp;Michael J. Lo (c) 2013
 			</div>
         </div>
@@ -74,6 +101,12 @@
         <script>window.jQuery || document.write('<script src="static/jquery-1.9.0.min.js"><\/script>')</script>
         <script src="static/plugins.js"></script>
         <script src="static/main.js"></script>
+		<script type="text/javascript"> 
+		$( document ).ready(function() {
+			$(function() {$('#logonLink').click(function() {$('#logon').show("slow");});});	
+		});
+		</script>
+
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -95,5 +128,6 @@
         </script>
         -->
     	<!-- End Old Tracker Code -->
+
     </body>
 </html>

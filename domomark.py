@@ -37,34 +37,33 @@ def validateLogin(loginUsername,loginPassword):
 def main():
 	# Already logged in
 	if user.username != "":
-		return template.render(title="Project Domomark", alerts="Welcome back %s. You last logged on at %s" % (user.username, user.lastLoggedOn))
+		return template.render(title="Project Domomark", user=user, alerts="Welcome back %s. You last logged on at %s" % (user.username, user.lastLoggedOn))
 		
 	# Not logged in yet
 	if request.method == 'GET':
-		return template.render(title="Project Domomark", alerts="Welcome to the homepage")
+		return template.render(title="Project Domomark", user=user, alerts="Welcome to the homepage")
 	else:
 		if validateLogin(request.form['username'],request.form['password']):
 			user.lastLoggedOn = user.logonTime
 			user.logonTime = time.strftime('%l:%M%p on %b %d, %Y')
-			return template.render(title="Project Domomark", alerts="Welcome back %s. You last logged on at %s" % (user.username, user.lastLoggedOn))
+			return template.render(title="Project Domomark", user=user, alerts="Welcome back %s. You last logged on at %s" % (user.username, user.lastLoggedOn))
 		else:
-			return template.render(title="Project Domomark", alerts="This is an INVALID login request")
+			return template.render(title="Project Domomark", user=user, alerts="This is an INVALID login request")
 
 @app.route('/register')
 def register():
-	return template.render(title="Project Domomark", alerts="Welcome back %s. You last logged on at %s" % (user.username, user.lastLoggedOn))
+	return template.render(title="Project Domomark", user=user, alerts="Welcome back %s. You last logged on at %s" % (user.username, user.lastLoggedOn))
 
 @app.route('/logout')
 def logout():
 	user.username = ""
 	user.password = ""
-	return redirect(url_for('main', title="Project Domomark", alerts="Logged Out Successfully"))
+	return redirect(url_for('main', title="Project Domomark", user=user, alerts="Logged Out Successfully"))
 	#return template.render(title="Project Domomark", alerts="Logged Out Successfully")
-
 
 @app.route('/about')
 def about():
-	return template.render(title="Project Domomark", alerts="This is the about page")
+	return template.render(title="Project Domomark", user=user, alerts="This is the about page")
 
 # Initialize program
 if __name__ == '__main__':
