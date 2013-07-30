@@ -11,10 +11,12 @@
         <meta name="viewport" content="width=device-width">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    	<link rel=stylesheet type=text/css href="static/960_12_col.css">
+        <link rel=stylesheet type=text/css href="static/normalize.css">
+        <link rel=stylesheet type=text/css href="static/main.css">
+        
+        <script src="static/modernizr-2.6.2.min.js"></script>
+        
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -23,32 +25,55 @@
 
 
         <!-- Add your site or application content here -->
-        
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <p>This is a v1 edit.</p>
-        <p><p>
-        <center>
-        <div width="500px" height="500px" background-color="#000000">
-        Test
-        <form>
-        <b>Username:</b> <input name="username" type="text"></ br>
-        <b>Password:</b> <input name="password" type="password"></ br>
-        <input type="submit" value="submit">
-        </form>
+        <div class="container_12">
+			<div class="grid_12" style="font-size:12px;color:#ffffff;background-color:#000000;">
+				{{ alerts }}
+			</div>
         </div>
-		</center>
-
-
-
-
+        
+        
+        <div class="container_12">
+			<div class="grid_3">
+				domomark
+			</div>
+			<div class="grid_3 push_6">
+				about | sign in | <a href='/logout'>sign out</a>
+			</div>
+        </div>
+        
+        <p><p><p></p></p></p>
+		<form method="POST">
+		<div class="container_12">
+			<div class="grid_1"><b>Username:</b></div>
+			<div class="grid_1 prefix_1"><input name="username" type="text"></div>
+			<br />
+		</div>
+		<div class="container_12">
+			<div class="grid_1"><b>Password:</b></div>
+			<div class="grid_1 prefix_1"><input name="password" type="password"></div>
+			<br />
+		</div>
+		<div class="container_12">
+        	<div class="grid_1"><input type="submit" value="login"></div>
+		</div>
+        </form>
+		
+        
+        <p><p><p></p></p></p>
+        
+        <div class="container_12">
+			<div class="grid_12" style="font-size:12px;color:#ffffff;background-color:#000000;">
+				&nbsp;&nbsp;Michael J. Lo (c) 2013
+			</div>
+        </div>
 		<!-- End application content here -->
 		
 		
 		
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script>window.jQuery || document.write('<script src="static/jquery-1.9.0.min.js"><\/script>')</script>
+        <script src="static/plugins.js"></script>
+        <script src="static/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
